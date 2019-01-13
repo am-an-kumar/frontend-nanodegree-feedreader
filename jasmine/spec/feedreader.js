@@ -37,7 +37,7 @@ $(function() {
             for(const feed of allFeeds){
                 expect(feed.url).toBeDefined();
                 expect(feed.url).not.toBeNull();
-                expect(feed.url).not.toBe('');
+                expect(feed.url.trim()).not.toBe('');
             }
         });
 
@@ -45,6 +45,13 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+        it('have a name field and it is not empty', function(){
+            for(const feed of allFeeds){
+                expect(feed.name).toBeDefined();
+                expect(feed.name).not.toBeNull();
+                expect(feed.name.trim()).not.toBe('');
+            }
+        });
     });
 
 
