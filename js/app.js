@@ -9,19 +9,21 @@
 // The names and URLs to all of the feeds we'd like available.
 var allFeeds = [
     {
-        name: 'Udacity Blog',
-        url: 'http://blog.udacity.com/feed'
-    }, {
         name: 'CSS Tricks',
         url: 'http://feeds.feedburner.com/CssTricks'
-    }, {
+    },
+    {
+        name: 'Udacity Blog',
+        url: 'http://blog.udacity.com/feed'
+    },
+    {
         name: 'HTML5 Rocks',
         url: 'http://feeds.feedburner.com/html5rocks'
     }, {
         name: 'Linear Digressions',
         url: 'http://feeds.feedburner.com/udacity-linear-digressions'
     }
-];
+]; 
 
 /* This function starts up our application. The Google Feed
  * Reader API is loaded asynchonously and will then call this
@@ -51,12 +53,14 @@ function init() {
        contentType:"application/json",
        success: function (result, status){
 
+                // getting reference of feed container, page heading and then getting the entries from the response and using handlebars library to parse the template
                  var container = $('.feed'),
                      title = $('.header-title'),
                      entries = result.feed.entries,
                      entriesLen = entries.length,
                      entryTemplate = Handlebars.compile($('.tpl-entry').html());
 
+                
                  title.html(feedName);   // Set the header text
                  container.empty();      // Empty out all previous entries
 
@@ -69,6 +73,7 @@ function init() {
                      container.append(entryTemplate(entry));
                  });
 
+                //  if a callback is passed, it gets executed...
                  if (cb) {
                      cb();
                  }

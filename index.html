@@ -11,27 +11,35 @@
         <link rel="stylesheet" href="css/icomoon.css">
         <link rel="stylesheet" href="css/style.css">
 
+        <!-- style file for jasmine reports -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine.min.css">
 
+        <!-- script files for jasmine -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/jasmine-html.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.3.0/boot.min.js"></script>
     </head>
     <body class="menu-hidden">
         <div class="header">
+            <!-- hamburger icon part -->
             <a href="#" class="menu-icon-link">
                 <i class="icon-list"></i>
             </a>
 
+            <!-- this header depends on the discussion forum name and changes based on the selection in the slide menu -->
             <h1 class="header-title">Feeds</h1>
         </div>
 
         <div class="slide-menu">
+            <!-- this menu is empty, means the list items are put in dynamically -->
             <ul class="feed-list"></ul>
         </div>
 
+        <!-- container for all the feeds of the currently selected discussion forum -->
         <div class="feed"></div>
 
+
+        <!-- templates for inserting the dynamic content -->
         <script class="tpl-entry" type="text/x-handlebars-template">
             <a class="entry-link" href="{{link}}">
                 <article class="entry">
@@ -53,7 +61,6 @@
         <script src="http://google.com/jsapi"></script>
 
         <script src="js/app.js"></script>
-
         <script src="jasmine/spec/feedreader.js"></script>
     </body>
 </html>
