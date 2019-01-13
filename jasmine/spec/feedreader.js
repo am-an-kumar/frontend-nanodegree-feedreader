@@ -21,6 +21,8 @@ $(function() {
          * allFeeds in app.js to be an empty array and refresh the
          * page?
          */
+        // allFeeds = [];
+        allFeeds = undefined;
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
