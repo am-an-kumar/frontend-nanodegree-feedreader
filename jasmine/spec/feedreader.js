@@ -114,9 +114,30 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-
     describe("New Feed Selection", function(){
-        
+
+        // variables to hold the innerHTML of the feed container after every loadFeed() call...
+        let initialFeeds;
+        let finalFeeds;
+        let feedContainer = document.querySelector('.feed');
+
+
+        beforeEach(function(done){
+            loadFeed(1, function(){
+                initialFeeds = feedContainer.innerHTML;
+                // console.log(initialFeeds);
+
+                loadFeed(2, function(){
+                    finalFeeds = feedContainer.innerHTML;
+                    done();
+                })
+            })
+        })
+
+        it("updates the feeds", function(){
+            expect(initialFeeds).not.toEqual(finalFeeds);
+        })
+
     });
         
 }());
