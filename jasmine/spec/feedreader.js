@@ -73,6 +73,14 @@ $(function() {
             * should have two expectations: does the menu display when
             * clicked and does it hide when clicked again.
             */
+           it("visibility should toggle on clicking menu icon", function(){
+                // simulating click on the menu icon...
+                document.getElementsByClassName('menu-icon-link')[0].click();
+                expect(document.body.classList.contains("menu-hidden")).toBe(false);
+
+                document.getElementsByClassName('menu-icon-link')[0].click();
+                expect(document.body.classList.contains("menu-hidden")).toBe(true);
+           })
 
         });
 
