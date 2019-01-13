@@ -83,10 +83,10 @@ $(function() {
            })
 
         });
-
         
 
     /* TODO: Write a new test suite named "Initial Entries" */
+    describe("initial entries", function(){
 
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
@@ -95,10 +95,25 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
+        // waiting for loadFeed() to fetch the feeds for the 2nd item in the menu
+        beforeEach(function(done){
+            loadFeed(1, done);
+        })
+
+        
+        it("has atleast 1 entry", function(){
+            expect(document.querySelectorAll('.feed .entry').length).not.toBe(0);
+        })
+        
+
+    })
+
     /* TODO: Write a new test suite named "New Feed Selection" */
 
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+
+        
 }());
