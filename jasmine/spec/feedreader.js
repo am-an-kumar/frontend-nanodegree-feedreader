@@ -22,7 +22,7 @@ $(function() {
          * page?
          */
         // allFeeds = [];
-        allFeeds = undefined;
+        // allFeeds = undefined;
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
@@ -33,7 +33,13 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-
+        it('have a url field and it is not empty', function(){
+            for(const feed of allFeeds){
+                expect(feed.url).toBeDefined();
+                expect(feed.url).not.toBeNull();
+                expect(feed.url).not.toBe('');
+            }
+        });
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
