@@ -100,7 +100,7 @@ $(function() {
             loadFeed(1, done);
         })
 
-        
+
         it("has atleast 1 entry", function(){
             expect(document.querySelectorAll('.feed .entry').length).not.toBe(0);
         })
@@ -115,5 +115,8 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
 
+    describe("New Feed Selection", function(){
+        
+    });
         
 }());
