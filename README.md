@@ -34,7 +34,7 @@ The majority of the code was provided by [Udacity](https://github.com/udacity/fr
 
 ## Using Locally
 
-Go to the [GitHub repo](https://github.com/aman-kumar-rai/frontend-nanodegree-feedreader) for this site and clone it and open the index.html in a browser.
+Go to the [GitHub repo](https://github.com/am-an-kumar/frontend-nanodegree-feedreader) for this site and clone it and open the index.html in a browser.
 
 You'll see your feedreader app, along with the Jasmine testing output at the bottom of the page.
 
